@@ -44,9 +44,14 @@
     <!--END: FRAME_RSSFEEDS -->
 
     <!--START: page_styles-->
-    <link
+    <!-- <link
       rel="stylesheet"
       href="assets/templates/common-core/lib/bootstrap/css/bootstrap.css"
+      type="text/css"
+    /> -->
+    <link
+      rel="StyleSheet"
+      href="assets/templates/fto-core/css/bootstrap.min.css"
       type="text/css"
     />
     <link
@@ -59,200 +64,83 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Montserrat:400,500,700|Old+Standard+TT:400,700"
       rel="stylesheet"
     />
-    <!-- add back before going live <link
+    <!-- todo: add back before going live <link
       rel="StyleSheet"
       href="assets/templates/[template]/css/[stylesheet]"
       type="text/css"
-	/> -->
+  /> -->
     <link
       rel="StyleSheet"
-      href="assets/templates/fto-barber-core/css/fto-default.css"
+      href="assets/templates/fto-core/css/fto-default.css"
       type="text/css"
     />
     <!--END: page_styles-->
   </head>
   <body class="[body_class]" data-currency="[currency_symbol]">
-    <section class="header-navigation sticky-jump">
-      <div class="navbar-header hidden-xs clearfix">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-2">
-              <div class="row">
-                <div class="logo">
-                  <!--START: global_header-->
-                  <h3 class="store-name">[storename]</h3>
-                  <h4 class="store-slogan">[storeslogan]</h4>
-                  <!--END: global_header-->
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-5">
-              <nav id="menulinks-outer" class="menulinks hidden-sm row">
-                <ul id="menulinks" class="nav navbar-nav">
-                  <li id="sticky-toggle">
-                    <a
-                      href="#caTnaV"
-                      role="button"
-                      data-toggle="collapse"
-                      class="collapsed"
-                      ><span class="icon-menu"></span
-                    ></a>
-                  </li>
-                  <!--START: menuitems_view-->
-                  <!--START: TOP_LINK_FORMAT-->
-                  <li>
-                    <a
-                      href="infopage.asp?page=[link_id]"
-                      class="menu"
-                      target="[link_target]"
-                      >[link_name]</a
-                    >
-                  </li>
-                  <!--END: TOP_LINK_FORMAT-->
-                  <!--END: menuitems_view-->
-                </ul>
-              </nav>
-            </div>
-
-            <div class="col-md-2">
-              <div class="row">
-                <!--START: FRAME_SEARCH-->
-                <div id="searchBox" class="searchBox">
-                  <form method="get" name="searchForm" action="search.asp">
-                    <div class="search-form">
-                      <input
-                        type="text"
-                        id="searchlight"
-                        name="keyword"
-                        value=""
-                        placeholder="[frame_search]"
-                        class="search-text form-control"
-                      />
-                      <button
-                        type="submit"
-                        class="search-submit btn btn-default"
-                      >
-                        <span class="icon-search"></span>
-                      </button>
-                    </div>
-                  </form>
-                  <div class="clear"></div>
-                </div>
-                <!--END: FRAME_SEARCH-->
-              </div>
-            </div>
-
-            <div class="col-md-2">
-              <ul id="menulinks-" class="nav navbar-nav">
-                <!--START: login-->
-                <li>
-                  <a href="/myaccount.asp" class="menu">
-                    Log In
-                    <span class="sr-only">My Account</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/myaccount.asp" class="menu">
-                    My Account
-                    <span class="sr-only">My Account</span>
-                  </a>
-                </li>
-                <!--END: login-->
-                <!--START: username-->
-                <li>Hello, [username]</li>
-                <li>
-                  <a href="/myaccount.asp" class="menu">
-                    My Account
-                    <span class="sr-only">My Account</span>
-                  </a>
-                </li>
-                <!--END: username-->
-              </ul>
-            </div>
-
-            <div class="col-md-1">
-              <div class="row">
-                <button
-                  type="button"
-                  id="mobile-menu-trigger2"
-                  class="pull-right btn btn-default visible-sm"
-                >
-                  <span class="icon-menu"></span> Menu
-                  <span class="sr-only">Toggle navigation</span>
-                </button>
-                <a href="/view_cart.asp" class="top_text"
-                  >Cart ([ITEMSINCART]) <span class="icon-basket"></span
-                ></a>
-                <div class="clearfix"></div>
-              </div>
-            </div>
-
-            <div class="col-xs-3 visible-xs text-center head-mobile-nav">
-              <a href="#" id="mobile-menu-trigger">
-                <span class="icon-menu"></span>
-                <div>Menu</div>
-              </a>
-            </div>
-
-            <div class="col-xs-3 visible-xs text-center head-mobile-nav">
-              <a
-                href="#"
-                class="pull-right"
-                data-toggle="modal"
-                data-target="#searchModal"
-              >
-                <span class="sr-only">Search</span>
-                <span class="icon-search"></span>
-                <div>Search</div>
-              </a>
-            </div>
-          </div>
+    <section class="header-navigation">
+      <nav class="navbar">
+        <div class="navbar-brand">
+          <!--START: global_header-->
+          <h3 class="store-name">[storename]</h3>
+          <h4 class="store-slogan">[storeslogan]</h4>
+          <!--END: global_header-->
         </div>
-      </div>
-      <section id="caTnaV" class="categoriesNav navbar-wrapper hidden-xs">
-        <a
-          href="#"
-          class="sticky-ads abs-right2"
-          data-toggle="modal"
-          data-target="#searchModal"
+        <ul class="nav">
+          <!--START: menuitems_view-->
+          <!--START: TOP_LINK_FORMAT-->
+          <li class="nav-item">
+            <a
+              href="infopage.asp?page=[link_id]"
+              class="nav-link"
+              target="[link_target]"
+              >[link_name]
+            </a>
+          </li>
+          <!--END: TOP_LINK_FORMAT-->
+          <!--END: menuitems_view-->
+        </ul>
+
+        <!--START: FRAME_SEARCH-->
+        <form
+          method="get"
+          name="searchForm"
+          action="search.asp"
+          class="form-inline nav-item search"
         >
-          <span class="icon-search"></span>
-        </a>
-        <a href="/view_cart.asp" class="sticky-ads abs-right">
-          <span class="icon-basket"></span>
-        </a>
+          <input
+            class="form-control"
+            type="search"
+            id="searchlight"
+            name="keyword"
+            value=""
+            placeholder="[frame_search]"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-dark" type="submit">
+            <span class="icon-search"></span>
+          </button>
+        </form>
+        <!--END: FRAME_SEARCH-->
 
-        <div class="container">
-          <nav
-            id="categories-outer"
-            class="categories navbar-collapse collapse"
-          >
-            <!--START: FRAME_CATEGORY-->
-            <ul id="categories" class="nav navbar-nav">
-              <!--START: CATEGORIES-->
-              <li class="[dropdown_class]">
-                <!--START: CATEGORY_FORMAT-->
-                <a href="view_category.asp?cat=CATID">CATEGORY</a>
-                <!--END: CATEGORY_FORMAT-->
-                <!--START: SUB_CATEGORIES-->
-                <ul class="dropdown-menu animated">
-                  <!--START: SUB_CATEGORY_FORMAT-->
-                  <li class="col-sm-12 pull-left">
-                    <a href="view_category.asp?cat=CATID" class="subcat"
-                      >CATEGORY</a
-                    >
-                  </li>
-                  <!--END: SUB_CATEGORY_FORMAT-->
-                </ul>
-                <!--END: SUB_CATEGORIES-->
-              </li>
-              <!--END: CATEGORIES-->
-            </ul>
-            <!--END: FRAME_CATEGORY-->
-          </nav>
-        </div>
-      </section>
+        <ul class="nav">
+          <li class="nav-item">
+            <!--START: login-->
+            <a href="/myaccount.asp" class="nav-link">
+              Login
+              <span class="icon-login"></span>
+            </a>
+            <!--END: login-->
+            <!--START: username-->
+            <a href="/myaccount.asp" class="nav-link">[username]</a>
+            <!--END: username-->
+          </li>
+          <li class="nav-item">
+            <a href="/view_cart.asp" class="nav-link"
+              >([ITEMSINCART]) <span class="icon-basket"></span
+            ></a>
+          </li>
+        </ul>
+      </nav>
     </section>
 
     <!--Get current page template-->
@@ -617,7 +505,8 @@
     <!--START: page_scripts-->
     <script src="assets/templates/common-core/lib/jquery.min.js"></script>
     <script src="assets/templates/common-core/lib/jquery-migrate-3.0.1.min.js"></script>
-    <script src="assets/templates/common-core/lib/bootstrap/js/bootstrap.js"></script>
+    <!-- <script src="assets/templates/common-core/lib/bootstrap/js/bootstrap.js"></script> -->
+    <script src="assets/templates/fto-core/js/bootstrap.min.js"></script>
     <script src="assets/templates/common-core/js/core.js"></script>
     <script src="assets/templates/[template]/js/scrollreveal.min.js?vcart=7.6.0"></script>
     <script src="assets/templates/[template]/js/jquery.hoverIntent.js"></script>
