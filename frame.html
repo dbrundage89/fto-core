@@ -78,68 +78,81 @@
   </head>
   <body class="[body_class]" data-currency="[currency_symbol]">
     <section class="header-navigation">
-      <nav class="navbar">
+      <nav class="navbar navbar-expand-lg">
         <div class="navbar-brand">
           <!--START: global_header-->
           <h3 class="store-name">[storename]</h3>
           <h4 class="store-slogan">[storeslogan]</h4>
           <!--END: global_header-->
         </div>
-        <ul class="nav">
-          <!--START: menuitems_view-->
-          <!--START: TOP_LINK_FORMAT-->
-          <li class="nav-item">
-            <a
-              href="infopage.asp?page=[link_id]"
-              class="nav-link"
-              target="[link_target]"
-              >[link_name]
-            </a>
-          </li>
-          <!--END: TOP_LINK_FORMAT-->
-          <!--END: menuitems_view-->
-        </ul>
 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav menu-links">
+            <!--START: menuitems_view-->
+            <!--START: TOP_LINK_FORMAT-->
+            <li class="nav-item">
+              <a
+                href="infopage.asp?page=[link_id]"
+                class="nav-link"
+                target="[link_target]"
+                >[link_name]
+              </a>
+            </li>
+            <!--END: TOP_LINK_FORMAT-->
+            <!--END: menuitems_view-->
+          </ul>
+        </div>
+
+        <div class="search-form">
         <!--START: FRAME_SEARCH-->
-        <form
-          method="get"
-          name="searchForm"
-          action="search.asp"
-          class="form-inline nav-item search"
-        >
-          <input
-            class="form-control"
-            type="search"
-            id="searchlight"
-            name="keyword"
-            value=""
-            placeholder="[frame_search]"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-dark" type="submit">
-            <span class="icon-search"></span>
-          </button>
-        </form>
+          <form
+            method="get"
+            name="searchForm"
+            action="search.asp"
+            class="form-inline nav-item search"
+          >
+            <input
+              class="form-control"
+              type="search"
+              id="searchlight"
+              name="keyword"
+              value=""
+              placeholder="[frame_search]"
+              aria-label="Search"
+            />
+            <button class="btn" type="submit">
+              <span class="icon-search"></span>
+            </button>
+          </form>
         <!--END: FRAME_SEARCH-->
+        </div>
 
-        <ul class="nav">
-          <li class="nav-item">
-            <!--START: login-->
-            <a href="/myaccount.asp" class="nav-link">
-              Login
-              <span class="icon-login"></span>
-            </a>
-            <!--END: login-->
-            <!--START: username-->
-            <a href="/myaccount.asp" class="nav-link">[username]</a>
-            <!--END: username-->
-          </li>
-          <li class="nav-item">
-            <a href="/view_cart.asp" class="nav-link"
-              >([ITEMSINCART]) <span class="icon-basket"></span
-            ></a>
-          </li>
-        </ul>
+        <div class="navbar-expand">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <!--START: login-->
+              <a href="/myaccount.asp" class="nav-link">
+                Login
+                <span class="icon-login"></span>
+              </a>
+              <!--END: login-->
+              <!--START: username-->
+              <a href="/myaccount.asp" class="nav-link">[username]</a>
+              <!--END: username-->
+            </li>
+            <li class="nav-item">
+              <a href="/view_cart.asp" class="nav-link"
+                >([ITEMSINCART]) <span class="icon-basket"></span
+              ></a>
+            </li>
+          </ul>
+        </div>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="icon-menu"></span>
+        </button>
+
       </nav>
     </section>
 
@@ -391,35 +404,6 @@
     <a href="#" class="scrollToTop"
       ><i class="icon-angle-up icon-2x"></i> <span>TOP</span></a
     >
-
-    <nav id="mobile-menu" class="mobile-menu">
-      <div class="mobile-menu-inner">
-        <div class="mobile-menu-close">
-          <a href="#"></a>
-        </div>
-        <div class="mobile-menu-widget">
-          <h3>Categories</h3>
-          <div id="mobile-categories"></div>
-        </div>
-        <div class="mobile-menu-widget">
-          <h3>Menu Links</h3>
-          <div id="mobile-menulinks"></div>
-        </div>
-        <div class="mobile-menu-widget">
-          <h3>Contact Us</h3>
-          <div>
-            <a href="mailto:[store_email]"
-              ><i class="icon-mail"></i> [store_email]</a
-            >
-          </div>
-          <div>
-            <a href="tel:[store_phone]"
-              ><i class="icon-phone"></i>[store_phone]</a
-            >
-          </div>
-        </div>
-      </div>
-    </nav>
 
     <!--START: shopping_cart-->
     <div id="floating-cart" class="floating-cart">
