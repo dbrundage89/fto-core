@@ -508,6 +508,7 @@ body.home-page .header-navigation {
 
 .navbar .search input {
   border: none;
+  width: 7rem;
 }
 
 .navbar .search button {
@@ -528,10 +529,12 @@ body.home-page .header-navigation {
   margin-left: auto;
   margin-right: auto;
 }
-
+.navbar .account-links {
+  margin-left: auto;
+}
 .nav-link {
   color: #1a1a1a;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 500;
   font-style: normal;
   text-transform: uppercase;
