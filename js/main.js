@@ -151,19 +151,21 @@ function moveMenu() {
     }
 
     if (respWidth < 992) {
-        jQuery('#categories').appendTo('#mobile-categories');
-        jQuery('#menulinks').appendTo('#mobile-menulinks');
+		jQuery('#navigation-menu').insertAfter('#mobile-menu-button');
     }
     else {
-        jQuery('#categories').appendTo('#categories-outer');
-        jQuery('#menulinks').appendTo('#menulinks-outer');
+		jQuery('#navigation-menu').insertAfter('#logo');
+	}
+	
+	if (respWidth < 576) {
+		jQuery('#shop-link').prependTo('#menu-links')
     }
-/*
-    if (respWidth < 768) {
-    }
-    else {
-    }
-*/
+	else {
+		jQuery('#shop-link').prependTo('#account-links')
+	}
+	
+	jQuery('#login-link').insertAfter('#shop-link')
+
 }
 
 jQuery(document).ready(function () {
