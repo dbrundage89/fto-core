@@ -1108,16 +1108,46 @@ ul.social-icons li.social-icons-label {
 }
 
 /* Product Styling */
+#home .products-section {
+  margin: 25px 0;
+}
+#home .product-items {
+  background: #fafafac0;
+  border: 1px solid #9a9898;
+  margin: 0;
+}
 #home .product-item {
   display: none;
+  width: 100%;
 }
 #home .product-item .img {
-  height: 366px;
+  background: #fafafac0;
+  height: 370px;
+  margin: 0;
+  padding: 35px;
 }
 #home .product-item img {
   margin: 0;
+  position: relative;
 }
-.product-items {
+#home .product-item .name {
+  position: absolute;
+  bottom: 1%;
+  right: 5%;
+  background: #d6318e;
+  background: -webkit-linear-gradient(top left, #d6318e, #f8d8e7);
+  background: -moz-linear-gradient(top left, #d6318e, #f8d8e7);
+  background: linear-gradient(to bottom right, #d6318e, #f8d8e7);
+  opacity: 0.8;
+  width: 65%;
+  font-size: 1.5rem;
+  padding: 20px;
+  text-align: center;
+  height: auto;
+}
+#home .product-item .name a {
+  font-size: 1.5rem;
+  color: aliceblue;
 }
 .product-items .product-item-container {
   border: 1px solid #d9d9d9;
@@ -1278,11 +1308,6 @@ span.freeshipping {
   line-height: 1.35;
   margin-bottom: 30px;
 }
-#home .price span,
-del {
-  margin-left: auto;
-  margin-right: auto;
-}
 .homepage_content {
   padding: 35px 0;
   background: #e5eaf0;
@@ -1356,41 +1381,7 @@ del {
   width: 94%;
   margin: 0 3%;
 }
-.products-section {
-  background-color: transparent;
-  padding: 0px 0 0px 0;
-  margin: 25px auto 20px auto;
-}
 
-.products-section h2 {
-  font-family: "Old Standard TT", serif;
-  display: block;
-  background: #eee;
-  text-align: center;
-  color: #353535;
-  font-size: 22px;
-  letter-spacing: 0px;
-  line-height: 32px;
-  font-weight: 700;
-  text-transform: uppercase;
-  padding: 8px 10px;
-  margin: 0 0 30px;
-  position: relative;
-}
-.products-section h2 span {
-}
-.products-section h2 span:after {
-  content: "";
-  display: none;
-  background: none;
-  height: 0px;
-  width: 75%;
-  margin: auto;
-}
-@media (max-width: 991px) {
-  .products-section h2 {
-  }
-}
 .home-page-content .category-footer {
   padding: 0px 0 0px;
 }
@@ -1642,15 +1633,6 @@ del {
     left: 0;
     max-height: 98%;
   }
-  .products-section h2,
-  .home-page-content .category-header h3 {
-    font-size: 24px;
-    margin-bottom: 15px;
-  }
-  .products-section h2 span,
-  .home-page-content .category-header h3 span {
-  }
-
   .search-form-col {
     clear: both;
   }
