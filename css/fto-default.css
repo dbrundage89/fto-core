@@ -1132,18 +1132,24 @@ ul.social-icons li.social-icons-label {
 }
 #home .product-item .name {
   position: absolute;
-  bottom: 1%;
-  right: 5%;
-  background: #d6318e;
-  background: -webkit-linear-gradient(top left, #d6318e, #f8d8e7);
-  background: -moz-linear-gradient(top left, #d6318e, #f8d8e7);
-  background: linear-gradient(to bottom right, #d6318e, #f8d8e7);
+  bottom: 5%;
+  right: 2%;
+  background: #fb0808;
+  background: -webkit-linear-gradient(top left, #fb0808, #f8d8e7);
+  background: -moz-linear-gradient(top left, #fb0808, #f8d8e7);
+  background: linear-gradient(to bottom right, #fb0808, #f8d8e7);
   opacity: 0.8;
-  width: 65%;
   font-size: 1.5rem;
-  padding: 20px;
+  padding: 20px 45px;
+  margin: 0px;
   text-align: center;
   height: auto;
+}
+#home .product-item .nameAtBottom {
+  position: relative;
+  bottom: auto;
+  right: auto;
+  margin-top: 30px;
 }
 #home .product-item .name a {
   font-size: 1.5rem;

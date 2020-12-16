@@ -20,12 +20,12 @@
 								<a href="product.asp?itemid=[catalogid]">
 									<img src="thumbnail.asp?file=[image1]&maxx=0&maxy=370" alt="[name]" class="img-responsive" />
 								</a>
-								<!--START: quickview-->
-								<button class="quickview" data-toggle="modal">[product_quick-view]</button>
-								<!--END: quickview-->
 								<div class="name">
 									<a href="product.asp?itemid=[catalogid]">[name]</a>
 								</div>
+								<!--START: quickview-->
+								<button class="quickview" data-toggle="modal">[product_quick-view]</button>
+								<!--END: quickview-->
 							</div>
 						</div>
 						<!--END: ITEM_TEMPLATE_0-->
@@ -135,6 +135,7 @@
 			flexslider.vars.maxItems = gridSize;
 
 		});
+
 		jQuery(document).ready(function(){
 			setTimeout(function () {
 				window.dispatchEvent(new Event('resize'));
@@ -145,8 +146,22 @@
 	$(document).ready(function () {
 		var rand = Math.floor(Math.random() * ($('.product-item').length - 1));
 		var visibleDiv = $('.product-item')[rand];
-		$(visibleDiv).show();
+		var visibleElement = $(visibleDiv)
+		visibleElement.show();
+
+		var nameElement = visibleElement.find('.name')
+		var imgElement = visibleElement.find('img')
+		console.log('visibleElement', visibleElement.height())
+		console.log('imgElement', imgElement.height())
+		console.log('nameElement', nameElement.outerHeight())
+		
+		if ((visibleElement.height()-imgElement.height()) > (nameElement.outerHeight() + 70 )) {
+			//nameElement.addClass('nameAtBottom')
+		} else {
+			//nameElement.removeClass('nameAtBottom')
+		}
 	});
+
 </script>
 <!--END: template_scripts-->
 
