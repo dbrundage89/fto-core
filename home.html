@@ -143,24 +143,32 @@
 		});
 		
 	}());
-	$(document).ready(function () {
-		var rand = Math.floor(Math.random() * ($('.product-item').length - 1));
-		var visibleDiv = $('.product-item')[rand];
-		var visibleElement = $(visibleDiv)
-		visibleElement.show();
 
-		var nameElement = visibleElement.find('.name')
-		var imgElement = visibleElement.find('img')
-		console.log('visibleElement', visibleElement.height())
-		console.log('imgElement', imgElement.height())
-		console.log('nameElement', nameElement.outerHeight())
-		
-		if ((visibleElement.height()-imgElement.height()) > (nameElement.outerHeight() + 70 )) {
-			//nameElement.addClass('nameAtBottom')
-		} else {
-			//nameElement.removeClass('nameAtBottom')
-		}
+	$(document).ready(async function () {
+		var rand = Math.floor(Math.random() * ($('.product-item').length - 1));
+		var visbleProduct = $('.product-item')[rand];
+		var visibleProductElement = $(visbleProduct)
+		visibleProductElement.show()
+
+		let ro = new ResizeObserver(entries => {
+			setNamePosition(visibleProductElement)
+		});
+
+		ro.observe(visibleProductElement.find('img')[0]);
 	});
+
+	function setNamePosition(visibleProductElement) {
+		var nameElement = visibleProductElement.find('.name')
+		var imgElement = visibleProductElement.find('img')
+
+		if(!(imgElement.height() > 0)){return}
+
+		nameElement.removeClass('nameAtBottom')
+
+		if ((visibleProductElement.height() - imgElement.height()) > (nameElement.outerHeight() + 50)) {
+			nameElement.addClass('nameAtBottom')
+		}
+	}
 
 </script>
 <!--END: template_scripts-->

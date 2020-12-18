@@ -1132,7 +1132,7 @@ ul.social-icons li.social-icons-label {
 }
 #home .product-item .name {
   position: absolute;
-  bottom: 5%;
+  bottom: 10%;
   right: 2%;
   background: #fb0808;
   background: -webkit-linear-gradient(top left, #fb0808, #f8d8e7);
