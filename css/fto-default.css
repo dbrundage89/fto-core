@@ -1106,7 +1106,11 @@ ul.social-icons li.social-icons-label {
 .reviews-stars {
   color: #fff427;
 }
-
+/* Blog Styling */
+#home .blog-post {
+  display: none;
+  width: 100%;
+}
 /* Product Styling */
 #home .products-section {
   margin: 25px 0;

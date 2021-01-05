@@ -36,48 +36,41 @@
 			</div>
 		</div>
 		<div class="row">
-			<!--START: HOMEPAGE_BLOGS-->
-			<div class="homepage-blog-posts products-section">
-				<div class="container">
-					<h2 class="header-specials">[blog_recentposts]</h2>
-					<ul class="blogList clearfix">
-						<!--START: blog_post-->
-						<li class="blogPost [blog_class]">
-							<!--START: post_image-->
-							<div class="post-image">
-								<div class="post-image-container">
-									<a href="[pagename]" title="[subject]">
-										<img src="[post_image]" alt="[subject]" class="img-responsive" />
-									</a>
-								</div>
-							</div>
-							<!--END: post_image-->
-							<div class="post-content">
-								<!--START: post_title-->
-								<h3><a href="[pagename]" title="[subject]">[subject]</a></h3>
-								<!--END: post_title-->
+			<section class="blog-section">
+				<!--START: blog_post-->
+				<div class="blog-post [blog_class] [post_author]">
+					<!--START: POST_CATEGORY-->
+					<a href="[post_category_link]">[post_category_name]</a>
+					<!--END: POST_CATEGORY-->
+					<!--START: post_image-->
+					<div class="post-image">
+						<div class="post-image-container">
+							<a href="[pagename]" title="[subject]">
+								<img src="[post_image]" alt="[subject]" class="img-responsive" />
+							</a>
+						</div>
+					</div>
+					<!--END: post_image-->
+					<div class="post-content">
+						<!--START: post_title-->
+						<h3><a href="[pagename]" title="[subject]">[subject]</a></h3>
+						<!--END: post_title-->
 			
-								<div id="postContent" class="post" data-articleID="[post_id]">
-									[post]
-								</div>
+						<div id="postContent" class="post" data-articleID="[post_id]">
+							[post]
+						</div>
 			
-								<div class="post-info clearfix">
-									<div class="postDate">
-										[post_date]
-									</div>
-									<!--START: read-more-->
-									<div class="post-readmore">
-										<a href="[pagename]" title="[subject]" class="btn btn-default">[blog_read-more]</a>
-									</div>
-									<!--END: read-more-->
-								</div>
+						<div class="post-info clearfix">
+							<!--START: read-more-->
+							<div class="post-readmore">
+								<a href="[pagename]" title="[subject]" class="btn btn-default">[blog_read-more]</a>
 							</div>
-						</li>
-						<!--END: blog_post-->
-					</ul>
+							<!--END: read-more-->
+						</div>
+					</div>
 				</div>
-			</div>
-			<!--END: HOMEPAGE_BLOGS-->
+				<!--END: blog_post-->
+			</section>
 		</div>
 	</div>
 
@@ -155,6 +148,8 @@
 		});
 
 		ro.observe(visibleProductElement.find('img')[0]);
+
+		setVisiblePost()
 	});
 
 	function setNamePosition(visibleProductElement) {
@@ -168,6 +163,13 @@
 		if ((visibleProductElement.height() - imgElement.height()) > (nameElement.outerHeight() + 50)) {
 			nameElement.addClass('nameAtBottom')
 		}
+	}
+
+	function setVisiblePost() {
+		var rand = Math.floor(Math.random() * ($('.blog-post.featured').length - 1));
+		var visiblePost = $('.blog-post.featured')[rand];
+		var visiblePostElement = $(visiblePost)
+		visiblePostElement.show()
 	}
 
 </script>
