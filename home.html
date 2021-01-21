@@ -2,7 +2,7 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-md-7 d-flex flex-wrap align-content-center justify-content-center">
+			<div class="col-md-7 d-flex flex-wrap justify-content-center">
 				<!--START: CATEGORY_HEADER-->
 				<section class="category-header content-section">
 					<div class="content tc-pagebuilder">[CONTENT]</div>
@@ -22,9 +22,9 @@
 									<img src="thumbnail.asp?file=[image1]&maxx=0&maxy=370" alt="[name]"
 										class="img-responsive" />
 								</a>
-								<div class="name">
+								<!-- <div class="name nameAtBottom">
 									<a href="product.asp?itemid=[catalogid]">[name]</a>
-								</div>
+								</div> -->
 								<!--START: quickview-->
 								<button class="quickview" data-toggle="modal">[product_quick-view]</button>
 								<!--END: quickview-->
@@ -142,11 +142,11 @@
 		var visibleProductElement = $(visbleProduct)
 		visibleProductElement.show()
 
-		let ro = new ResizeObserver(entries => {
-			setNamePosition(visibleProductElement)
-		});
+		// let ro = new ResizeObserver(entries => {
+		// 	setNamePosition(visibleProductElement)
+		// });
 
-		ro.observe(visibleProductElement.find('img')[0]);
+		// ro.observe(visibleProductElement.find('img')[0]);
 
 		setVisiblePost()
 	});
