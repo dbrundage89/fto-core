@@ -15,10 +15,12 @@
 					<!--START: CATEGORY_ITEMS-->
 					<div class="product-items product-items-1">
 						<!--START: ITEM_TEMPLATE_0-->
-						<div class="product-item" data-catalogid="[catalogid]" data-ajaxcart="1" data-addcart-callback="addcart_callback">
+						<div class="product-item" data-catalogid="[catalogid]" data-ajaxcart="1"
+							data-addcart-callback="addcart_callback">
 							<div class="img">
 								<a href="product.asp?itemid=[catalogid]">
-									<img src="thumbnail.asp?file=[image1]&maxx=0&maxy=370" alt="[name]" class="img-responsive" />
+									<img src="thumbnail.asp?file=[image1]&maxx=0&maxy=370" alt="[name]"
+										class="img-responsive" />
 								</a>
 								<div class="name">
 									<a href="product.asp?itemid=[catalogid]">[name]</a>
@@ -39,9 +41,6 @@
 			<section class="blog-section">
 				<!--START: blog_post-->
 				<div class="blog-post [blog_class] [post_author]">
-					<!--START: POST_CATEGORY-->
-					<a href="[post_category_link]">[post_category_name]</a>
-					<!--END: POST_CATEGORY-->
 					<!--START: post_image-->
 					<div class="post-image">
 						<div class="post-image-container">
@@ -55,15 +54,15 @@
 						<!--START: post_title-->
 						<h3><a href="[pagename]" title="[subject]">[subject]</a></h3>
 						<!--END: post_title-->
-			
+
 						<div id="postContent" class="post" data-articleID="[post_id]">
 							[post]
 						</div>
-			
+
 						<div class="post-info clearfix">
 							<!--START: read-more-->
 							<div class="post-readmore">
-								<a href="[pagename]" title="[subject]" class="btn btn-default">[blog_read-more]</a>
+								<a href="[pagename]" title="[subject]" class="btn btn-default">Learn More</a>
 							</div>
 							<!--END: read-more-->
 						</div>
@@ -80,17 +79,17 @@
 <script type="text/javascript" src="/assets/templates/common-core/lib/flexslider/jquery.flexslider-min.js"></script>
 <script type="text/javascript" charset="utf-8">
 	jQuery(function () {
-		
+
 		// Homepage Carousel
 		jQuery('.homeCarousel').flexslider({
-            animation: jQuery('.homeCarousel').attr('data-animation'),
+			animation: jQuery('.homeCarousel').attr('data-animation'),
 			slideshow: false,
-            slideshowSpeed: 10000,
-            controlNav: false,
+			slideshowSpeed: 10000,
+			controlNav: false,
 			keyboard: false,
 			randomize: true
-        });
-		
+		});
+
 		// Product Scroll
 		// store the slider in a local variable
 		var $window = jQuery(window),
@@ -100,7 +99,7 @@
 		function getGridSize() {
 			var proCol = jQuery(".product-carousel > ul.slides").attr("data-productcols");
 			return (window.innerWidth <= 567) ? 1 :
-				   (window.innerWidth < 992) ? 2 : proCol;
+				(window.innerWidth < 992) ? 2 : proCol;
 		}
 
 		$window.on("load", function () {
@@ -114,7 +113,7 @@
 				maxItems: getGridSize() // use function to pull in initial value
 
 			});
-			
+
 			setTimeout(function () {
 				window.dispatchEvent(new Event('resize'));
 			}, 100);
@@ -129,16 +128,16 @@
 
 		});
 
-		jQuery(document).ready(function(){
+		jQuery(document).ready(function () {
 			setTimeout(function () {
 				window.dispatchEvent(new Event('resize'));
 			}, 1000);
 		});
-		
+
 	}());
 
 	$(document).ready(async function () {
-		var rand = Math.floor(Math.random() * ($('.product-item').length - 1));
+		var rand = Math.floor(Math.random() * ($('.product-item').length));
 		var visbleProduct = $('.product-item')[rand];
 		var visibleProductElement = $(visbleProduct)
 		visibleProductElement.show()
@@ -156,7 +155,7 @@
 		var nameElement = visibleProductElement.find('.name')
 		var imgElement = visibleProductElement.find('img')
 
-		if(!(imgElement.height() > 0)){return}
+		if (!(imgElement.height() > 0)) { return }
 
 		nameElement.removeClass('nameAtBottom')
 
@@ -166,7 +165,7 @@
 	}
 
 	function setVisiblePost() {
-		var rand = Math.floor(Math.random() * ($('.blog-post.featured').length - 1));
+		var rand = Math.floor(Math.random() * ($('.blog-post.featured').length));
 		var visiblePost = $('.blog-post.featured')[rand];
 		var visiblePostElement = $(visiblePost)
 		visiblePostElement.show()
@@ -176,6 +175,8 @@
 <!--END: template_scripts-->
 
 <!--START: template_styles-->
-<link rel="stylesheet" href="/assets/templates/common-core/lib/flexslider/flexslider.css" type="text/css" media="screen" />
-<link href="assets/templates/common-core/lib/contentbuilder/minimalist-blocks/content.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/assets/templates/common-core/lib/flexslider/flexslider.css" type="text/css"
+	media="screen" />
+<link href="assets/templates/common-core/lib/contentbuilder/minimalist-blocks/content.min.css" rel="stylesheet"
+	type="text/css" />
 <!--END: template_styles-->
